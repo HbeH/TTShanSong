@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="tt.shansong.mapper.TtUserMapper">
+
+	<!--user结果映射 -->
+	<resultMap id="BaseResult"
+		type="tt.manager.pojo.TtUsert">
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="ethhdwalletId" property="ethhdwalletId" />
+		<result column="name" property="name" />
+		<result column="dealPassword" property="dealPassword" />
+		<result column="loginPassword" property="loginPassword" />
+		<result column="createDate" property="createDate" />
+		<result column="updateDate" property="updateDate" />
+	</resultMap>
+
+
+	<select id="selectByEthWalletId"
+		parameterType="string" resultMap="BaseResult">
+		select id from a_personwallet
+		where
+		ethhdwalletId = #{ethhdwalletId}
+	</select>
+	
+	
+</mapper>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;tt.shansong.service&apos; to &apos;tt.manager.service&apos;&#x0D;&#x0A;- Original project: &apos;tt-manager-interface&apos;&#x0D;&#x0A;- Original element: &apos;tt-manager-interface/src/main/java/tt.shansong.service&apos;&#x0D;&#x0A;- Renamed element: &apos;tt-manager-interface/src/main/java/tt.manager.service&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;tt.shansong.service&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;tt.shansong.service" name="tt.manager.service" qualified="false" references="true" stamp="1536546817071" textual="false" version="1.0"/>
+</session>

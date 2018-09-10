@@ -1,0 +1,9 @@
+package tt.shansong.service;
+
+import tt.manager.pojo.TtUser;
+import utils.BackResult;
+
+public interface TestService {
+
+	public TtUser getTTUser(String id);
+}

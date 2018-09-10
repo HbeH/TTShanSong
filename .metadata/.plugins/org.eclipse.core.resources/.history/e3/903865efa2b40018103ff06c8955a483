@@ -1,0 +1,21 @@
+package tt.manager.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import klf.manager.service.TestService;
+import tt.manager.mapper.TtUserMapper;
+
+@Service
+public class TestServiceImpl implements TestService{
+
+	@Autowired
+	private TtUserMapper ttUserMapper;
+	
+	@Override
+	public String TestReturn() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

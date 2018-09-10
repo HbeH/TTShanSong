@@ -1,0 +1,295 @@
+package klf.common.utils;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+import org.apache.commons.io.IOUtils;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
+import java.security.KeyFactory;
+import java.security.PrivateKey;
+import java.security.Signature;
+import java.security.spec.PKCS8EncodedKeySpec;
+import klf.common.utils.md5.Base64;
+import net.sf.json.JSONObject;
+
+
+
+public class HttpClientUtil {
+
+	public static String doGet(String url, Map<String, String> param) {
+	
+		// 创建Httpclient对象
+		CloseableHttpClient httpclient = HttpClients.createDefault();
+
+		String resultString = "";
+		CloseableHttpResponse response = null;
+		try {
+			// 创建uri
+			URIBuilder builder = new URIBuilder(url);
+			if (param != null) {
+				for (String key : param.keySet()) {
+					builder.addParameter(key, param.get(key));
+				}
+			}
+			URI uri = builder.build();
+
+			// 创建http GET请求
+			HttpGet httpGet = new HttpGet(uri);
+
+			// 执行请求
+			response = httpclient.execute(httpGet);
+			// 判断返回状态是否为200
+			if (response.getStatusLine().getStatusCode() == 200) {
+				resultString = EntityUtils.toString(response.getEntity(), "UTF-8");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (response != null) {
+					response.close();
+				}
+				httpclient.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return resultString;
+	}
+
+	public static String doGet(String url) throws Exception {
+		
+		return doGet(url, null);
+	}
+
+	public static String doPost(String url, Map<String, String> param) {
+		// 创建Httpclient对象
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		CloseableHttpResponse response = null;
+		String resultString = "";
+		try {
+			// 创建Http Post请求
+			HttpPost httpPost = new HttpPost(url);
+			// 创建参数列表
+			if (param != null) {
+				List<NameValuePair> paramList = new ArrayList<>();
+				for (String key : param.keySet()) {
+					paramList.add(new BasicNameValuePair(key, param.get(key)));
+				}
+				// 模拟表单
+				UrlEncodedFormEntity entity = new UrlEncodedFormEntity(paramList);
+				httpPost.setEntity(entity);
+			}
+			// 执行http请求
+			response = httpClient.execute(httpPost);
+			resultString = EntityUtils.toString(response.getEntity(), "utf-8");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				response.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return resultString;
+	}
+
+	public static String doPost(String url) {
+		return doPost(url, null);
+	}
+	
+	public static String doPostJson(String url, String json) {
+		// 创建Httpclient对象
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		CloseableHttpResponse response = null;
+		String resultString = "";
+		try {
+			// 创建Http Post请求
+			HttpPost httpPost = new HttpPost(url);
+			// 创建请求内容
+			StringEntity entity = new StringEntity(json, ContentType.APPLICATION_JSON);
+			httpPost.setEntity(entity);
+			// 执行http请求
+			response = httpClient.execute(httpPost);
+			resultString = EntityUtils.toString(response.getEntity(), "utf-8");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				response.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return resultString;
+	}
+	
+	public String getRequest(String url,int timeOut) throws Exception{
+        URL u = new URL(url);
+        if("https".equalsIgnoreCase(u.getProtocol())){
+            SslUtils.ignoreSsl();
+        }
+        URLConnection conn = u.openConnection();
+        conn.setConnectTimeout(timeOut);
+        conn.setReadTimeout(timeOut);
+        return IOUtils.toString(conn.getInputStream());
+    }
+	
+    public String postRequest(String urlAddress,String args,int timeOut) throws Exception{
+        URL url = new URL(urlAddress);
+        if("https".equalsIgnoreCase(url.getProtocol())){
+            SslUtils.ignoreSsl();
+        }
+        URLConnection u = url.openConnection();
+        u.setDoInput(true);
+        u.setDoOutput(true);
+        u.setConnectTimeout(timeOut);
+        u.setReadTimeout(timeOut);
+        OutputStreamWriter osw = new OutputStreamWriter(u.getOutputStream(), "UTF-8");
+        osw.write(args);
+        osw.flush();
+        osw.close();
+        u.getOutputStream();
+        return IOUtils.toString(u.getInputStream());
+    }
+    
+    public static String sign(byte[] data, String privateKey) {
+		try{
+			// 解密由base64编码的私钥
+//			byte[] keyBytes = decryptBASE64(privateKey);
+			byte[] keyBytes = Base64.decode(privateKey);
+			
+			// 构造PKCS8EncodedKeySpec对象
+			PKCS8EncodedKeySpec pkcs8KeySpec = new PKCS8EncodedKeySpec(keyBytes);
+
+			// KEY_ALGORITHM 指定的加密算法
+			KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+
+			// 取私钥匙对象
+			PrivateKey priKey = keyFactory.generatePrivate(pkcs8KeySpec);
+			// 用私钥对信息生成数字签名
+			Signature signature = Signature.getInstance("MD5withRSA");
+			signature.initSign(priKey);
+			signature.update(data);
+			return Base64.encode(signature.sign()).trim().replace(" ", "");
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "";
+	}
+	
+	public String httpParameter(String httpUrl,JSONObject object){
+		/**
+		 * 随机串 32-40位
+		 */
+		String nonceStr = UUID.randomUUID().toString();
+//		System.out.println("nonceStr:"+nonceStr);
+		/**
+		 * 获取token
+		 */
+		String token = "r23sLyUAkCU9DqqIyZ46yk8HLqVEOA15";
+//		System.out.println("token:"+token);
+		/**
+		 * 签名
+		 */
+		String signStr = sign((token + nonceStr).getBytes(), Constant.priSecrte);
+//		System.out.println("signStr:"+signStr);
+		HttpURLConnection urlConnection = null;
+		String result = "";
+        try {
+            URL url = new URL(httpUrl);
+            urlConnection = (HttpURLConnection)url.openConnection();
+            // 设置是否向connection输出，因为这个是post请求，参数要放在
+            // http正文内，因此需要设为true
+            urlConnection.setDoOutput(true);
+            // Read from the connection. Default is true.
+            urlConnection.setDoInput(true);
+            // 默认是 GET方式
+            urlConnection.setRequestMethod("POST");
+            // Post 请求不能使用缓存
+            urlConnection.setUseCaches(false);
+            urlConnection.setInstanceFollowRedirects(true);
+            urlConnection.setRequestProperty("Content-type", "application/json;charset=UTF-8");
+            urlConnection.setRequestProperty("ChannelId", Constant.new_channelId);
+            urlConnection.setRequestProperty("nonceStr", nonceStr);
+            urlConnection.setRequestProperty("signStr", signStr);
+            urlConnection.connect();
+            if(object != null){
+            	 OutputStream outputStream = urlConnection.getOutputStream();
+                 outputStream.write(object.toString().getBytes("UTF-8"));
+                 outputStream.flush();
+                 outputStream.close();
+            }
+            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+            BufferedReader br = new BufferedReader(new InputStreamReader(in,"UTF-8"));
+            String line = null;
+            StringBuilder builder = new StringBuilder();
+            while((line = br.readLine()) != null){
+            	builder.append(line);
+            }
+            result = builder.toString();
+            result = result.replace("\n", "");
+        } catch (MalformedURLException e) {
+        	if(!httpUrl.contains("SafeReturnTaskServlet")){
+        		e.printStackTrace();
+        	}
+        } catch (IOException e) {
+        	if(!httpUrl.contains("SafeReturnTaskServlet")){
+        		e.printStackTrace();
+        	}
+        } finally {
+            if(null!=urlConnection){
+                urlConnection.disconnect();
+            }
+        }
+        return result;
+	}
+	
+    
+    public static String getEthResult(){
+    	
+    	 try {
+    		 HttpClientUtil st = new HttpClientUtil();
+	         String a = st.getRequest("http://app.manbz.com/cheyou3/servlet/SafeZtwlGetProvinceServlet.do", 333000);
+	          
+//	         EthResult jsonToPojo = JsonUtils.jsonToPojo(a, EthResult.class);
+	         System.out.println(a);
+	         return a;
+	            
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+    	 
+    	 	return null;
+    }
+}

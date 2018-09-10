@@ -1,0 +1,44 @@
+package klf.common.utils;
+
+public class ResultJsonBean {
+
+	private String reason;
+	private String result;
+	private String error_code;
+	/**
+	 * @return the reason
+	 */
+	public String getReason() {
+		return reason;
+	}
+	/**
+	 * @return the result
+	 */
+	public String getResult() {
+		return result;
+	}
+	/**
+	 * @return the error_code
+	 */
+	public String getError_code() {
+		return error_code;
+	}
+	/**
+	 * @param reason the reason to set
+	 */
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
+	/**
+	 * @param result the result to set
+	 */
+	public void setResult(String result) {
+		this.result = result;
+	}
+	/**
+	 * @param error_code the error_code to set
+	 */
+	public void setError_code(String error_code) {
+		this.error_code = error_code;
+	}
+}

@@ -1,0 +1,390 @@
+package klf.common.utils;
+
+/**
+ * 地址
+ * @author hfei
+ *
+ */
+public class Constant {
+
+	/**
+	 * channelId
+	 */
+	public final static String channelId = "zzb.channel.chetaixian";
+	
+	/*public static String new_channelId = "qd_LRTYfhLE10QZmCHd";
+	public static String channelSecret = "Teb9IBH3YcGSqAHgQ5oiACtpHLyHA84n";
+	public static String insureAreaCode = "441900"; //东莞地区
+	public static String priSecrte = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAN90tXnUT20Qtm+I3dbKS7QQrs2l"
+			+"o8QcPpspR6G9WZeGjxSTRnkX3hdLIjmaiehXffC8PeYGAUXn/rdblnCSQrm4FdpWEY//d0rQSgGd"
+			+"8cs2t8Kpl4DvbP/+qGBxrVD3Q7Smc0J35pTArNOgwy6Sl4k3h7V0hRIZjfxXOkAzO5zJAgMBAAEC"
+			+"gYEAgu+eTy8LA3uhiyWF6BBN38tOwo3msklingTIRovvbYyZVpMd3mMP7lJGUb6uRIjP8To8gwbN"
+			+"xCq25LY0Ju5tTdGl2lKiUbRXE8zUi9vZwd6WfXYi3WWmTBYjcoVqeWsI8tlx5o/swzN6lFYvs2eC"
+			+"Hfs0Drs2R+Ta56gbIxIGkCECQQD0VIZBSoKuXbO6x+2zSzkPzbSa9qi2OlCatv+b0WJjCZHmDwAB"
+			+"P4lOtkpKOxtSnXsMqQ0Is7lX4NTLedRAyuMNAkEA6iDzSG/vLj5Eb4OzJUpIxFEn56sMFX7GuDi6"
+			+"6xP6D8qiupmrjXFHrjAifCSF6nbkaga1puojVqL6b1I4NWmhrQJBAIK2OYDykMkh3gZd8T/LTYKz"
+			+"5RxGO2oJ9pdesY61zPH467Htcm44hIe0pDfkOTDQiUTzp8JxDAYEhTM6QSBMqn0CQAsFZA5b3olx"
+			+"uuz46RzvQz+ihltcbOQyJI6VdQ8N0K6fnktkYnP1CifD8kufuIIR+KyZBkIGMYWphFprJ2Q0Rb0C"
+			+"QCm4ONB07E/e8/bneyvck3mzyT11dWEIt5a2YSAvqXxXwLvcfbdEvSjMG0Z9UHN4bK9FEtv+KmYBTg8w1My9Swo=";
+	public static String httpUrl = "http://icm.uat.52zzb.com/cm/channelService";*/
+	
+	/**
+	 * 正式账户
+	 */
+
+	public static String new_channelId = "qd_tH0VgKgZn2KCpcRv";
+	public static String channelSecret = "uzWZmclyAAtFS2hZfgVqS53FawahKvQ6";
+	public static String insureAreaCode = "420100"; //湖北地区
+	
+	public static String priSecrte = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAO6EbBtBromYnqUPvSq8a4+R+tH40eWC0446GrZs700TfGoF0xcQv+6TKuXMbUu0UmcH5ri/DYlite3toJ4JrrDd20FCSFTOWsABit5hCJRNmynGU7TpRHWjrLSXOaZd0R5nxiXTvjnR4BJz5Q8dJ3b1h+pjLbnAoItPZG+GaPOpAgMBAAECgYEAuVLI0LDLFXwxH91HxPHbvRTWxtjG9cYd7G93G/EuSjvuuk5GQrCwAIX2mdCpx12XfRhli3xe3zWEWBb/amvpf2EK4prSqzWzv3SXFIKPAY4BQyQ0SiA6kUb//D/t+t12smRTlLt5TvOpAH8FIhe87Yosxz9lXEnugy2yI3p2oGUCQQD6UgyseWJcgQTT5Y9c8LzaiSc4U+g8WMmE3j/V+gCsIMoTqGHh+aIuGGwUK/S/BYb1nfuCGlkNyqNqUCjLeFTTAkEA8+3Qv2N7NUfZtodqTndAPY9G3+iNGfirr2SeOzeUTVbSh/qg7u/zlLfRXjtWTMhtqK1FO+CgtLY3tW7YDJG4EwJAK01QRfHFkyz6cdFvSGuYr9E0CKlzLiVJzwNHVbOmtCAD9PyW2il95a1x3Ndxwi2pmAmZPXtjVmBsfnKZbAFH4wJBAL3HDF2a3ES7vdqQyFh71vMOAao6l2zZV1mCAsk3mJ4DKpC4oXTEItJVoQKbT601UnulMvQ+80kla3ow3s4IoRkCQGjQseOaJrrAPVdNUmPrtMUOfdnJeHH69/hxRTLv9FsVVAAz80Xy3Y1JTcTBefJtQFz/VmFS/fWkMSE6JxHTlpk=";
+	public static String httpUrl = "http://icm.52zzb.com/cm/channelService";
+	
+	
+	/**
+	 * 前缀
+	 */
+//	public final static String httpUrl = "http://cninsure-2011.gicp.net:8680/TFService/restful";
+//	public final static String httpUrl = "http://cittest.cisg.cn/cm/channelService";
+	
+	/*public final static String common_prvId = "2005420199";
+	public final static String taiping_prvId = "999999";*/
+	
+	/**
+	 * 获取token
+	 */
+	public final static String getToken_url = httpUrl+"/getToken";
+	/**
+	 * 影响识别
+	 */
+	public final static String yingxiangshibie_1 = httpUrl+"/recognizeImage";
+	/**
+	 * 获取新版供应商
+	 */
+	public final static String provider_url_1 = httpUrl+"/getProviders";
+	/**
+	 * 获取地市
+	 */
+	public final static String area_url_6 = httpUrl+"/getAgreementAreas";;
+	/**
+	 * 创建任务A
+	 */
+	public final static String createTaskA_url_1 = httpUrl+"/createTaskA";
+	/**
+	 * 创建任务B
+	 */
+	public final static String createTaskB_url_1 = httpUrl+"/createTaskB";
+	/**
+	 * 车型库
+	 */
+	public final static String queryCarModelInfos_url_1 = httpUrl+"/queryCarModelInfos";
+	/**
+	 * 修改报价
+	 */
+	public final static String updateTask_url_1 = httpUrl+"/updateTask";
+	
+	
+	/**
+	 * 提交报价
+	 */
+	public final static String submitQuote_url_1 = httpUrl+"/submitQuote";
+	/**
+	 * 任务查询
+	 */
+	public final static String queryTask_url_1 = httpUrl+"/queryTask";
+	/**
+	 * 提交核保
+	 */
+	public final static String submitInsure_url_1 = httpUrl+"/submitInsure";
+	/**
+	 * 上传影像资料
+	 */
+	public final static String uploadImage_url_1 = httpUrl+"/uploadImage";
+	/**
+	 * 支付
+	 */
+	public final static String pay_url_1 = httpUrl+"/pay";
+	
+	/**
+	 * 渠道获取访问内嵌首页的授权码  hbe
+	 */
+	public final static String getInnerAuthCode = httpUrl+"/getInnerAuthCode";
+	public final static String innerShowTitle = "Y";
+	public final static String retUrl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe2d7c5a09deb69e6&redirect_uri=http://app.manbz.com/cheyou3/servlet/SafeSkipQuoteServlet.do&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
+	
+	
+	/**
+	 * 新版本状态 状态 0初始状态  1报价中   2报价失败  3报价成功  4关闭  5提交核保失败退回修改  6提交核保成功  7人工核保中   8拒绝承包 9核保成功   10支付成功  11支付失败  12出单中  13配送中  14订单完成  15交易关闭
+	 */
+	public final static int status_init1 = 0;
+	public final static int status_quoteing1 = 1;
+	public final static int status_quotefail1 = 2;
+	public final static int status_quotesuccess1 = 3;
+	public final static int status_close1 = 4;
+	public final static int status_insuredfail1 = 5;
+	public final static int status_insuredsuccess1 = 6;
+	public final static int status_insureding1 = 7;
+	public final static int status_insuredjujue1 = 8;
+	public final static int status_readypay1 = 9;
+	public final static int status_paysuccess1 = 10;
+	public final static int status_payfail1 = 11;
+	public final static int status_chudaning1 = 12;
+	public final static int status_peisonging1 = 13;
+	public final static int status_success1 = 14;
+	public final static int status_payclose1 = 15;
+	
+	
+	
+	/**
+	 * 供应商
+	 */
+	public final static String provider_url = "/quote/getProviderInfo/420100/zzb.channel.chetaixian";
+	/**
+	 * 暂存报价
+	 */
+	public final static String quote_url = "/quote/request";
+	/**
+	 * 支付
+	 */
+	public final static String pay_url = "http://cninsure-2011.gicp.net:33669/PMService/restful/paymentService/pay";
+	
+	
+	/**
+	 * 回调路径
+	 */
+	public final static String returnUrlHead = "http://app.manbz.com/cheyou3";
+	/**
+	 * 回调地址
+	 */
+	public final static String notify_url = returnUrlHead+"/servlet/SafeReturnQuoteServlet.do";
+	/**
+	 * 支付回调
+	 */
+	public final static String pay_notify_url = returnUrlHead+"/servlet/SafeReturnPayServlet.do";
+	
+	//----------------------------//
+	/**
+	 * 退回修改
+	 */
+	public final static String status_BACKTOMODIFY = "BackToModify";
+	/**
+	 * 报价失败
+	 */
+	public final static String status_QUOTEFAILED = "QuoteFailed";
+	/**
+	 * 报价成功
+	 */
+	public final static String status_QUOTESUCCESS = "QuoteSuccess";
+	/**
+	 *  核保失败
+	 */
+	public final static String status_VERIFYfAILED = "VerifyFailed";
+	/**
+	 * 核保成功
+	 */
+	public final static String status_VERIFYSUCCESS = "VerifySuccess";
+	/**
+	 * 核保中
+	 */
+	public final static String status_VERIFYING = "Verifying";
+	/**
+	 * 承保失败
+	 */
+	public final static String status_UNDERWRITEFAILED = "UnderWriteFailed";
+	/**
+	 * 承保成功
+	 */
+	public final static String status_UNDERWIRTESUCCESS = "UnderWriteSuccess";
+	/**
+	 * 快递配送失败
+	 */
+	public final static String status_DISTRIBUTEFAILED = "DistributeFailed";
+	/**
+	 * 配送成功
+	 */
+	public final static String status_DISTRIBUTESUCCESS = "DistributeSuccess";
+	/**
+	 * 报价取消
+	 */
+	public final static String status_QUOTECANCEL = "QuoteCancel";
+	/**
+	 * 无效单子
+	 */
+	public final static String status_CANCELLED = "Cancelled";
+	
+	public static int getCode(String state){
+		if(state.equals(Constant.status_BACKTOMODIFY)){
+			//退回修改
+			return 5;
+		}else if(state.equals(Constant.status_QUOTEFAILED)){
+			//报价失败
+			return 6;		
+		}else if(state.equals(Constant.status_QUOTESUCCESS)){
+			//报价成功
+			return 7;
+			
+		}else if(state.equals(Constant.status_VERIFYfAILED)){
+			//核保失败
+			return 8;
+			
+		}else if(state.equals(Constant.status_VERIFYSUCCESS)){
+			//核保成功
+			return 9;
+			
+		}else if(state.equals(Constant.status_VERIFYING)){
+			//核保中
+			return 10;
+			
+		}else if(state.equals(Constant.status_UNDERWRITEFAILED)){
+			//承保失败
+			return 11;
+			
+		}else if(state.equals(Constant.status_UNDERWIRTESUCCESS)){
+			//承保成功
+			return 12;
+			
+		}else if(state.equals(Constant.status_DISTRIBUTEFAILED)){
+			//快递配送失败
+			return 13;
+			
+		}else if(state.equals(Constant.status_DISTRIBUTESUCCESS)){
+			//快递成功
+			return 14;
+			
+		}else if(state.equals(Constant.status_QUOTECANCEL)){
+			//取消报价
+			return 15;
+			
+		}else if(state.equals(Constant.status_CANCELLED)){
+			//无效单子
+			return 16;
+			
+		}else{
+			return 17;
+		}
+	}
+//	 * 0暂存   1提交失败   2提交成功（初审中）  3初审未通过  拒绝承保    4初审未通过 返回修改    5初审通过待投保   6核保中   7核保失败  8核保退回修改   9核保成功（待支付） 10支付失败  11支付成功   12快递配送失败   13快递配送成功   14主动取消 15无效单子
+	
+	/**
+	 * 初始状态
+	 */
+	public final static int pay_init = 0;
+	/**
+	 * 支付成功
+	 */
+	public final static int pay_success = 1;
+	/**
+	 * 支付失败
+	 */
+	public final static int pay_fail = 2;
+
+	/**
+	 * 暂存
+	 */
+	public final static int mid_save = 0;
+	/**
+	 * 提交失败
+	 */
+	public final static int mid_submitQuote_fail = 1;
+	/**
+	 * 提交成功
+	 */
+	public final static int mid_submitQuote_success = 2;
+	/**
+	 * 初审未通过  拒绝承保
+	 */
+	public final static int mid_shenhe_refuse = 3;
+	/**
+	 * 初审未通过 返回修改
+	 */
+	public final static int mid_shenhe_update = 4;
+	/**
+	 * 初审通过待投保
+	 */
+	public final static int mid_shenhe_success = 5;
+	/**
+	 * 核保提交失败
+	 */
+	public final static int mid_submitInsure_fail = 6;
+	/**
+	 * 核保提交成功
+	 */
+	public final static int mid_submitInsure_success = 7;
+	/**
+	 * 核保失败
+	 */
+	public final static int mid_hebao_fail = 8;
+	/**
+	 * 核保成功（待支付）
+	 */
+	public final static int mid_hebao_success = 9;
+	/**
+	 * 支付失败
+	 */
+	public final static int mid_pay_fail = 10;
+	/**
+	 * 支付成功
+	 */
+	public final static int mid_pay_success = 11;
+	
+	
+	
+	/**
+	 * 主动取消
+	 */
+	public final static int quote_cancel = 14;
+	/**
+	 * 无效单子
+	 */
+	public final static int quote_invalid = 15;
+	
+	
+	/**
+	 * 暂存
+	 */
+	public final static int sid_save = 0;
+	/**
+	 * 提交失败
+	 */
+	public final static int sid_submitQuote_fail = 1;
+	/**
+	 * 提交成功
+	 */
+	public final static int sid_submitQuote_success = 2;
+	/**
+	 * 初审未通过  拒绝承保
+	 */
+	public final static int sid_shenhe_refuse = 3;
+	/**
+	 * 初审未通过 返回修改
+	 */
+	public final static int sid_shenhe_update = 4;
+	/**
+	 * 初审通过待投保
+	 */
+	public final static int sid_shenhe_success = 5;
+	/**
+	 * 核保提交失败
+	 */
+	public final static int sid_submitInsure_fail = 6;
+	/**
+	 * 核保提交成功
+	 */
+	public final static int sid_submitInsure_success = 7;
+	/**
+	 * 核保失败
+	 */
+	public final static int sid_hebao_fail = 8;
+	/**
+	 * 核保成功（待支付）
+	 */
+	public final static int sid_hebao_success = 9;
+	/**
+	 * 支付失败
+	 */
+	public final static int sid_pay_fail = 10;
+	/**
+	 * 支付成功
+	 */
+	public final static int sid_pay_success = 11;
+	
+}

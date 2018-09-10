@@ -1,0 +1,8 @@
+package fyr.manager.service;
+
+import tt.manager.pojo.TtUser;
+
+public class TestService {
+
+	public TtUser getTTUser(String id);
+}

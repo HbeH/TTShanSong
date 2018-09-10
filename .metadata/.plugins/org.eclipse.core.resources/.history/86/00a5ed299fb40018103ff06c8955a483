@@ -1,0 +1,5 @@
+package tt.shansong.mapper;
+
+public interface TestMapper {
+
+}

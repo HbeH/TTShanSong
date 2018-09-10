@@ -1,0 +1,91 @@
+package klf.common.utils;
+
+public class PrvImage {
+
+	public static String getPrvImage(String prvName) {
+
+		String image_url = null;
+		switch (prvName) {
+		case "阳光财险":
+			image_url = "http://imgs.manbz.com/5ae99db0-a17d-4701-9556-24f774f1ed18_20191.png";
+			break;
+		case "富德财险":
+			image_url = "http://imgs.manbz.com/1823c2bb-d048-4d74-b83e-a667e03cc7a0_2077.png";
+			break;
+		case "人保财险":
+			image_url = "http://imgs.manbz.com/0d6141f4-1084-4d13-80ca-29df81ffedca_3.jpg";
+			break;
+		case "安盛天平财险":
+			image_url = "http://imgs.manbz.com/0d39ee55-9d80-4c80-9f13-801cc4a8a182_2026.png";
+			break;
+		case "华安财险":
+			image_url = "http://imgs.manbz.com/09c57902-0135-4194-b37f-9e1b86c5e3f0_2043.png";
+			break;
+		case "太保财险":
+			image_url = "http://imgs.manbz.com/5b16c4bf-a531-4584-911e-1d43b064ae4d_2011.png";
+			break;
+		case "平安财险":
+			image_url = "http://imgs.manbz.com/3cde7e3c-671d-4f94-b72b-642025060bbf_2007.png";
+			break;
+		case "太平财险":
+			image_url = "http://imgs.manbz.com/612c3a17-48a2-4973-8d19-1339a3e1a474_2016.png";
+			break;
+		case "亚太财险":
+			image_url = "http://imgs.manbz.com/797866a5-8afb-4f18-aaff-11500ce36874_yantai.png";
+			break;
+		case "长安责任":
+			image_url = "http://imgs.manbz.com/13c2a190-03a9-40aa-be23-1ff6b814748a_2086.png";
+			break;
+		case "永诚财险":
+			image_url = "http://imgs.manbz.com/5974f92f-4f82-40f4-8656-af342ed74d83_2022.png";
+			break;
+		case "都邦财险":
+			image_url = "http://imgs.manbz.com/4d584b03-84e5-445f-96f8-3061e5067612_2042.png";
+			break;
+		case "天安财险":
+			image_url = "http://imgs.manbz.com/c4125a76-ef94-4a6a-be83-e4dcdbe8aa82_2045.png";
+			break;
+		case "紫金财险":
+			image_url = "http://imgs.manbz.com/4c1d1eb1-de2d-4570-aecc-db1c4fd53590_2095.png";
+			break;
+		case "华泰财险":
+			image_url = "http://imgs.manbz.com/4394e323-85d0-4627-9bae-fcb01f8180c7_2023.png";
+			break;
+		case "中华联合财险":
+			image_url = "http://imgs.manbz.com/eb4c4834-a2f3-41fb-b53a-09a9ffe3fae6_2027.png";
+			break;
+		case "鼎和财险":
+			image_url = "http://imgs.manbz.com/620b24aa-4b4c-4e30-b1e7-f812590d617b_2088.png";
+			break;
+		case "利宝保险":
+			image_url = "http://imgs.manbz.com/e9fb8b99-41c1-443c-9c40-7e1a3b5413f8_2085.png";
+			break;
+		case "大地财险":
+			image_url = "http://imgs.manbz.com/134b0f43-e765-41a9-8e63-6aa00ef58dfb_2021.png";
+			break;
+		case "国寿财险":
+			image_url = "http://imgs.manbz.com/f9202cbe-d72f-48d9-90d4-7d84ffac267d_2002.png";
+			break;
+		case "锦泰财险":
+			image_url = "http://imgs.manbz.com/803f64fd-e889-4b86-819a-0c044c98a8dd_2050.png";
+			break;
+		case "太平洋财险":
+			image_url = "http://imgs.manbz.com/5b16c4bf-a531-4584-911e-1d43b064ae4d_2011.png";
+			break;
+		case "信达财险":
+			image_url = "http://imgs.manbz.com/b7bdc13d-d7a3-4f7b-af6d-febe84afabc5_2096.png";
+			break;
+		case "国任财险":
+			image_url = "http://imgs.manbz.com/4499c204-9ebb-4079-b008-ea0590e48160_WX20180517-113610x.png";
+			break;
+		// case "":
+		// image_url = "";
+		// break;
+
+		default:
+			break;
+		}
+
+		return image_url;
+	}
+}

@@ -1,0 +1,27 @@
+package fyr.manager.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import fyr.manager.service.TestService;
+import utils.BackResult;
+
+
+@Controller
+@RequestMapping("/shansong")
+@ResponseBody
+public class TestController {
+
+	@Autowired
+	private TestService testService;
+	
+	@RequestMapping(value = "/test",method = RequestMethod.POST)
+	private BackResult test(@RequestParam String id) {
+		
+		return BackResult.build(0, "success", testService.getTTUser(id));
+	}
+}

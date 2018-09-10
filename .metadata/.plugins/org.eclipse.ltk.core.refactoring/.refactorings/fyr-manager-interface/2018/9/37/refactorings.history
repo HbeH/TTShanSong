@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;TestService.java&apos; to &apos;lj-manager-interface/src/main/java/lj.manager.service&apos;&#x0D;&#x0A;- Original project: &apos;fyr-manager-interface&apos;&#x0D;&#x0A;- Destination element: &apos;lj-manager-interface/src/main/java/lj.manager.service&apos;&#x0D;&#x0A;- Original element: &apos;fyr.manager.service.TestService.java&apos;" description="Copy compilation unit" destination="=lj-manager-interface/src\/main\/java&lt;lj.manager.service" element1="/src\/main\/java&lt;fyr.manager.service{TestService.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1536550555675" units="1" version="1.0"/>
+</session>

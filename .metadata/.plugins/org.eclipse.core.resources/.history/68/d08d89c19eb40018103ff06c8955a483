@@ -1,0 +1,6 @@
+package tt.shansong.service;
+
+public class TestService {
+
+	public getTTUser(String id);
+}

@@ -1,0 +1,4 @@
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://rdsum26b2zrvy3e.mysql.rds.aliyuncs.com:3306/coins?characterEncoding=utf-8
+jdbc.username=cheyouweb
+jdbc.password=A33150212a

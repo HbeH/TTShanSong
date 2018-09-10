@@ -1,0 +1,8 @@
+package tt.shansong.mapper;
+
+import tt.manager.pojo.TtUser;
+
+public interface TestMapper {
+
+	
+}
